@@ -22,8 +22,11 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: Appcolor.background,
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 15),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.05,
+              vertical: MediaQuery.of(context).size.height * 0.03,
+            ),
             child: Column(
               children: [
                 Row(
@@ -32,8 +35,8 @@ class _MainScreenState extends State<MainScreen> {
                     ClipOval(
                       child: Image.asset(
                         'assets/image/Ellipse2.png',
-                        width: 44,
-                        height: 44,
+                        width: MediaQuery.of(context).size.width * 0.1,
+                        height: MediaQuery.of(context).size.width * 0.1,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -42,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
                         isNotificationPressed
                             ? Icons.notifications_rounded
                             : Icons.notifications_none_rounded,
-                        size: 28,
+                        size: MediaQuery.of(context).size.width * 0.07,
                       ),
                       onPressed: () {
                         setState(
@@ -54,8 +57,8 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,7 +69,7 @@ class _MainScreenState extends State<MainScreen> {
                           color: Colors.black,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.bold,
-                          fontSize: 13,
+                          fontSize: MediaQuery.of(context).size.width * 0.04,
                           letterSpacing: 0.75),
                     ),
                     Row(
@@ -77,26 +80,27 @@ class _MainScreenState extends State<MainScreen> {
                               color: Appcolor.blue,
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.bold,
-                              fontSize: 13,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.04,
                               letterSpacing: 0.25),
                         ),
                         Icon(
                           Icons.arrow_drop_down,
                           color: Appcolor.blue,
-                          size: 16,
+                          size: MediaQuery.of(context).size.width * 0.05,
                         )
                       ],
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 17,
+                  height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 ListView.separated(
                   shrinkWrap: true,
                   physics: BouncingScrollPhysics(),
                   separatorBuilder: (context, index) => SizedBox(
-                    height: 16,
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   itemBuilder: (context, index) {
                     final Job job = jobList[index];
@@ -108,8 +112,8 @@ class _MainScreenState extends State<MainScreen> {
                         }));
                       },
                       child: SizedBox(
-                        width: 363,
-                        height: 120,
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: MediaQuery.of(context).size.height * 0.18,
                         child: Card(
                           shape: BeveledRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0)),
@@ -118,14 +122,18 @@ class _MainScreenState extends State<MainScreen> {
                               ListTile(
                                 leading: Image.asset(
                                   job.imgasset,
-                                  height: 45,
-                                  width: 45,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.1,
+                                  width:
+                                      MediaQuery.of(context).size.height * 0.1,
                                 ),
                                 title: Text(
                                   job.title,
                                   style: TextStyle(
                                       color: Appcolor.black,
-                                      fontSize: 16,
+                                      fontSize:
+                                          MediaQuery.of(context).size.width *
+                                              0.045,
                                       fontFamily: "poppins",
                                       fontWeight: FontWeight.w600),
                                 ),
@@ -133,14 +141,18 @@ class _MainScreenState extends State<MainScreen> {
                                   job.company,
                                   style: TextStyle(
                                       color: Appcolor.black,
-                                      fontSize: 12,
+                                      fontSize:
+                                          MediaQuery.of(context).size.width *
+                                              0.035,
                                       fontFamily: "poppins",
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 14.0),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -152,7 +164,9 @@ class _MainScreenState extends State<MainScreen> {
                                         color: Appcolor.black,
                                         fontFamily: "poppins",
                                         fontWeight: FontWeight.normal,
-                                        fontSize: 12,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.035,
                                       ),
                                     ),
                                   ],
